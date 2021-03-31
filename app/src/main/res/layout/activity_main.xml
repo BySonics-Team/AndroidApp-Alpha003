@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="100"
+        android:orientation="vertical"
+        android:id="@+id/topMenu"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="20"
+            >
+            <com.google.android.material.appbar.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/AppTheme.AppBarOverlay"
+                android:background="@drawable/main_appbarlayout_bg_1">
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="100">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="15"
+                        >
+
+                        <ImageButton
+                            android:id="@+id/logoutButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="#00FFFFFF"
+                            android:src="@drawable/main_logout_icon"
+                            android:layout_marginLeft="20dp"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="65">
+
+                        <TextView
+                            android:id="@+id/title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:gravity="center"
+                            android:minHeight="?actionBarSize"
+                            android:paddingLeft="10dp"
+                            android:text="@string/app_name"
+                            android:textAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Title" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="25"
+                        android:gravity="right|center_vertical">
+
+                        <Button
+                            android:id="@+id/pairMenuButton"
+                            android:layout_width="match_parent"
+                            android:layout_height="33dp"
+                            android:layout_margin="20dp"
+                            android:layout_marginRight="15dp"
+                            android:background="@drawable/btn_pair_bg"
+                            android:text="Pair"
+                            android:textColor="#4D0C20" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:gravity="center"
+                    android:minHeight="?actionBarSize"
+                    android:paddingLeft="20dp"
+                    android:text="Welcome"
+                    android:textColor="#80FFFFFF"
+                    />
+
+                <TextView
+                    android:id="@+id/nameUser"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:textSize="20dp"
+                    android:gravity="center"
+                    android:textColor="#FFFFFF"
+                    android:minHeight="?actionBarSize"
+                    android:paddingLeft="20dp"
+                    android:text="User"
+                    android:layout_marginBottom="10dp"/>
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/tabsMenu"
+        android:layout_below="@id/topMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="20"
+        >
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#9E0000"
+            app:tabIndicatorColor="@color/colorAccent"/>
+
+    </LinearLayout>
+
+    <com.example.basicviewer.ui.main.CustomViewPager
+        android:layout_below="@+id/tabsMenu"
+        android:id="@+id/view_pager"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_gravity="bottom"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:tabMode="fixed" />
+
+    <LinearLayout
+        android:layout_below="@id/tabsMenu"
+        android:layout_width="fill_parent"
+        android:layout_height="150dp"
+        android:background="@drawable/main_status_bg_3"
+        >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/tabs"
+            android:orientation="horizontal"
+            android:weightSum="100">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="50"
+                android:orientation="vertical"
+                android:background="@drawable/main_hrspo2_bg"
+                android:gravity="center_horizontal|center_vertical">
+
+                <TextView
+                    android:id="@+id/spo2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="--"
+                    android:textColor="@color/design_default_color_error"
+                    android:textSize="30dp"
+                    app:fontFamily="monospace" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:paddingTop="10dp"
+                    android:text="SPO2 (%)"
+                    android:textColor="#80242134"
+                    app:fontFamily="monospace" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="50"
+                android:orientation="vertical"
+                android:background="@drawable/main_hrspo2_bg"
+                android:gravity="center_horizontal|center_vertical">
+                >
+
+                <TextView
+                    android:id="@+id/bpm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="--"
+                    android:textColor="@color/design_default_color_error"
+                    android:textSize="30dp"
+                    app:fontFamily="monospace" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:paddingTop="10dp"
+                    android:text="SPO2 (%)"
+                    android:textColor="#80242134"
+                    app:fontFamily="monospace" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</RelativeLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

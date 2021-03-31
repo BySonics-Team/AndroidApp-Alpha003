@@ -1,0 +1,53 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="100"
+    android:orientation="vertical"
+    >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="85"
+        android:background="#ffffff"
+        android:orientation="vertical">
+
+        <com.example.basicviewer.ui.main.ZoomableImageView
+            android:id="@+id/imageView"
+            android:layout_marginTop="150dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:layout_gravity="center_horizontal|center_vertical"
+            tools:src="@tools:sample/avatars" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="15"
+        android:background="@drawable/gradient"
+        android:orientation="vertical">
+
+<!--        <Button-->
+<!--            android:id="@+id/button2"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_centerInParent="true"-->
+<!--            android:layout_gravity="center_vertical|center_horizontal"-->
+<!--            android:text="Get Last Image"-->
+<!--            android:background="#d32f2f"-->
+<!--            android:textColor="#ffffff"-->
+<!--            android:textAllCaps="false"-->
+<!--            android:paddingLeft="10dp"-->
+<!--            android:paddingRight="10dp"-->
+<!--            />-->
+
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,204 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="100"
+    android:orientation="vertical"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="bottom"
+        android:id="@+id/liveMainFrame"
+        >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="#ffffff"
+            android:id="@+id/graphViewFrame">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RelativeLayout
+                    android:id="@+id/form_layout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+
+                    //PPG
+                    <TextView
+                        android:layout_marginTop="150dp"
+                        android:id="@+id/titlePPG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Grafik PPG"
+                        android:layout_marginLeft="10dp"
+                        android:textSize="15dp"
+                        android:textStyle="bold"
+                        android:textColor="#d32f2f"/>
+
+                    <com.jjoe64.graphview.GraphView
+                        android:id="@+id/graphLivePPG"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:layout_below="@id/titlePPG"
+                        android:layout_marginTop="5dp" />
+
+                    //EKG
+                    <TextView
+                        android:id="@+id/titleEKG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/graphLivePPG"
+                        android:layout_marginTop="10dp"
+                        android:text="Grafik EKG"
+                        android:layout_marginLeft="10dp"
+                        android:textSize="15dp"
+                        android:textStyle="bold"
+                        android:textColor="#d32f2f"/>
+
+                    <com.jjoe64.graphview.GraphView
+                        android:id="@+id/graphLiveEKG"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:layout_below="@id/titleEKG"
+                        android:layout_marginTop="5dp" />
+                    //EMG
+
+                    <TextView
+                        android:id="@+id/titleEMG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/graphLiveEKG"
+                        android:layout_marginTop="10dp"
+                        android:text="Grafik EMG"
+                        android:layout_marginLeft="10dp"
+                        android:textSize="15dp"
+                        android:textStyle="bold"
+                        android:textColor="#d32f2f"/>
+
+                    <com.jjoe64.graphview.GraphView
+                        android:id="@+id/graphLiveEMG"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:layout_below="@id/titleEMG"
+                        android:layout_marginTop="5dp"
+                        android:textColor="#d32f2f"/>
+
+                    //Acce
+
+                    <TextView
+                        android:id="@+id/titleAcce"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/graphLiveEMG"
+                        android:layout_marginTop="10dp"
+                        android:text="Grafik Accelerometer"
+                        android:layout_marginLeft="10dp"
+                        android:textSize="15dp"
+                        android:textStyle="bold"
+                        android:textColor="#d32f2f"/>
+
+                    <com.jjoe64.graphview.GraphView
+                        android:id="@+id/graphLiveAcce"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:layout_below="@id/titleAcce"
+                        android:layout_marginTop="5dp"
+                        android:textColor="#d32f2f"/>
+                    / /Suhu
+
+                    <TextView
+                        android:id="@+id/titleSuhu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/graphLiveAcce"
+                        android:layout_marginTop="10dp"
+                        android:text="Grafik Suhu"
+                        android:layout_marginLeft="10dp"
+                        android:textSize="15dp"
+                        android:textStyle="bold"
+                        android:textColor="#d32f2f"/>
+
+                    <com.jjoe64.graphview.GraphView
+                        android:id="@+id/graphLiveSuhu"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:layout_below="@id/titleSuhu"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="100dp"/>
+
+                </RelativeLayout>
+            </ScrollView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="100dp"
+            android:background="@drawable/live_controlbar_bg"
+            android:weightSum="75"
+            android:orientation="horizontal"
+            android:layout_alignBottom="@id/graphViewFrame"
+            android:gravity="center_horizontal|center_vertical">
+
+            <Button
+                android:id="@+id/btnStart"
+                android:layout_marginTop="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/live_start_icon"
+                android:layout_below="@id/btnStop"
+                android:layout_weight="25"
+                android:background="@drawable/live_btn_bg"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="5dp"
+                android:text="Start"
+                android:textAlignment="textStart"
+                android:drawablePadding="10dp"
+                android:paddingLeft="15dp"
+                android:textColor="#F2F5FA"
+                />
+
+            <Button
+                android:id="@+id/btnStop"
+                android:layout_marginTop="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/live_stop_icon"
+                android:layout_below="@id/btnStop"
+                android:layout_weight="25"
+                android:background="@drawable/live_btn_bg"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:text="Stop"
+                android:textAlignment="textStart"
+                android:drawablePadding="10dp"
+                android:paddingLeft="15dp"
+                android:textColor="#F2F5FA"
+                />
+
+            <Button
+                android:id="@+id/btnReset"
+                android:layout_marginTop="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/live_reset_icon"
+                android:layout_below="@id/btnStop"
+                android:layout_weight="25"
+                android:background="@drawable/live_btn_bg"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="20dp"
+                android:text="Reset"
+                android:textAlignment="textStart"
+                android:drawablePadding="10dp"
+                android:paddingLeft="15dp"
+                android:textColor="#F2F5FA" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

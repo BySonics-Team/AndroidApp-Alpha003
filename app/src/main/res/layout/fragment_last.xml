@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffffff">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="100"
+        android:orientation="vertical"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="bottom"
+            android:id="@+id/liveMainFrame"
+            >
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/refreshButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorPrimaryDark"
+                android:clickable="true"
+                app:srcCompat="@android:drawable/ic_popup_sync"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="100dp"
+                android:layout_marginRight="10dp"/>
+
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="#ffffff"
+                android:id="@+id/graphViewFrame">
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <RelativeLayout
+                        android:id="@+id/form_layout"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+
+                        //PPG
+                        <TextView
+                            android:layout_marginTop="150dp"
+                            android:id="@+id/titlePPG"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Grafik PPG"
+                            android:layout_marginLeft="10dp"
+                            android:textSize="15dp"
+                            android:textStyle="bold"
+                            android:textColor="#d32f2f"/>
+
+                        <com.jjoe64.graphview.GraphView
+                            android:id="@+id/graphLivePPG"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:layout_below="@id/titlePPG"
+                            android:layout_marginTop="5dp" />
+
+                        //EKG
+                        <TextView
+                            android:id="@+id/titleEKG"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/graphLivePPG"
+                            android:layout_marginTop="10dp"
+                            android:text="Grafik EKG"
+                            android:layout_marginLeft="10dp"
+                            android:textSize="15dp"
+                            android:textStyle="bold"
+                            android:textColor="#d32f2f"/>
+
+                        <com.jjoe64.graphview.GraphView
+                            android:id="@+id/graphLiveEKG"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:layout_below="@id/titleEKG"
+                            android:layout_marginTop="5dp" />
+                        //EMG
+
+                        <TextView
+                            android:id="@+id/titleEMG"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/graphLiveEKG"
+                            android:layout_marginTop="10dp"
+                            android:text="Grafik EMG"
+                            android:layout_marginLeft="10dp"
+                            android:textSize="15dp"
+                            android:textStyle="bold"
+                            android:textColor="#d32f2f"/>
+
+                        <com.jjoe64.graphview.GraphView
+                            android:id="@+id/graphLiveEMG"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:layout_below="@id/titleEMG"
+                            android:layout_marginTop="5dp"
+                            android:textColor="#d32f2f"/>
+
+                        //Acce
+
+                        <TextView
+                            android:id="@+id/titleAcce"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/graphLiveEMG"
+                            android:layout_marginTop="10dp"
+                            android:text="Grafik Accelerometer"
+                            android:layout_marginLeft="10dp"
+                            android:textSize="15dp"
+                            android:textStyle="bold"
+                            android:textColor="#d32f2f"/>
+
+                        <com.jjoe64.graphview.GraphView
+                            android:id="@+id/graphLiveAcce"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:layout_below="@id/titleAcce"
+                            android:layout_marginTop="5dp"
+                            android:textColor="#d32f2f"/>
+                        / /Suhu
+
+                        <TextView
+                            android:id="@+id/titleSuhu"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/graphLiveAcce"
+                            android:layout_marginTop="10dp"
+                            android:text="Grafik Suhu"
+                            android:layout_marginLeft="10dp"
+                            android:textSize="15dp"
+                            android:textStyle="bold"
+                            android:textColor="#d32f2f"/>
+
+                        <com.jjoe64.graphview.GraphView
+                            android:id="@+id/graphLiveSuhu"
+                            android:layout_width="match_parent"
+                            android:layout_height="150dp"
+                            android:layout_below="@id/titleSuhu"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="100dp"/>
+
+                    </RelativeLayout>
+                </ScrollView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:id="@+id/graphLastController"
+                android:layout_height="100dp"
+                android:background="@drawable/live_controlbar_bg"
+                android:weightSum="75"
+                android:orientation="horizontal"
+                android:layout_alignBottom="@id/graphViewFrame"
+                android:gravity="center_horizontal|center_vertical">
+
+                <Button
+                    android:id="@+id/prevButton"
+                    android:layout_marginTop="15dp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="10"
+                    android:layout_marginRight="40dp"
+                    android:background="@drawable/btn_prev_active"
+                    />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="20"
+                    android:text="No. Record"
+                    android:textSize="20dp"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@android:color/darker_gray"
+                    />
+                <TextView
+                    android:id="@+id/currRecordNumber"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="10"
+                    android:text="00"
+                    android:textAlignment="viewEnd"
+                    android:textSize="35dp"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    />
+                <TextView
+                    android:id="@+id/totalRecordNumber"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="10"
+                    android:text="/00"
+                    android:textSize="20dp"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@android:color/darker_gray"
+                    />
+
+                <Button
+                    android:id="@+id/nextButton"
+                    android:layout_marginTop="15dp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="10"
+                    android:layout_marginLeft="25dp"
+                    android:background="@drawable/btn_next_active"
+                    />
+
+
+            </LinearLayout>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>
